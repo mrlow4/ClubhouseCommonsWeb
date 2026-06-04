@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const mainCtrl = require("../controllers/main");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Clubhouse Commons Main page' });
-});
+router.get('/', mainCtrl.index);
 
 module.exports = router;
