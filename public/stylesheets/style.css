@@ -55,8 +55,8 @@ figcaption {
 /*content background*/
 .page-content {
     background-color: #b0000f;
-    width: 95%;
-    max-width: 95%;
+    width: 100%;
+    max-width: 100%;
     margin: 40px;
     padding: 20px;
     justify-self: center;
