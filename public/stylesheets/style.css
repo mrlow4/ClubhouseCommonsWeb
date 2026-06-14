@@ -1,6 +1,6 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
 }
 
 a {
@@ -54,7 +54,7 @@ figcaption {
 
 /*content background*/
 .page-content {
-    background-color: #70010b;
+    background-color: #b0000f;
     width: 100%;
     max-width: 100%;
     margin: 40px;
@@ -66,12 +66,14 @@ figcaption {
   max-width: 1100px;
   margin: 0 auto;
   justify-items: center;
+  padding: 50px;
 }
 
 .center-image {
   display: block;
   margin: 2rem auto;
   padding: 0;
+  border-radius: 10px;
 }
 
 /*
@@ -87,6 +89,9 @@ figcaption {
   align-items: center;
   box-sizing: border-box;
   padding: 10px;
+  border-radius: 10px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 /* main page image styling*/
 .main-img {
@@ -142,42 +147,98 @@ figcaption {
 }
 
 /* 
+  ----- Donation Widget -----
+*/
+
+.donation-widget {
+  width: 80%;
+  margin: 30px auto;
+
+  background: #b5d8ff;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.donation-amount {
+  color: #20032e;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 28px;
+  background: #b5d8ff;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid #20032e;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    black,
+    #360056
+  );
+  border-radius: 999px;
+
+  transition: width 0.5s ease;
+}
+
+.donation-percent {
+  margin: 10px;
+  margin-bottom: 20px;
+  color: #360056;
+}
+
+.donation-button {
+  background-color: #360056;
+  color: white;
+  border-radius: 20px;
+  padding: 12px;
+  font-size: 1.2rem;
+}
+
+/* 
   ----- Header -----
 */
 
 header {
-  background-color: #F5EEFF;
-  color: white;
-  padding: 20px;
-  margin-bottom: 50px;
+  padding: 10px 0;
+  margin-bottom: 20px;
 }
 
 .header-art ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .logo img {
-  max-width: 100%;
-  max-height: calc(100vh - 40px);
-  min-width: 20px;
+  width: 75%;
   height: auto;
 }
 
 .star img {
-  max-width: 100%;
-  max-height: calc(100vh - 40px);
-  min-width: 20px;
+  width: 75%;
   height: auto;
   display: block;
 }
 
 .main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #a5b2fe;
+
   list-style: none;
   padding: 0;
   margin: 5px;
@@ -191,13 +252,14 @@ header {
 }
 
 .main-nav a {
-    color: #360056;
-    text-decoration: none;
-    margin: 5px;
+  color: #360056;
+  text-decoration: none;
+  margin: 5px;
+  font-size: large;
 }
 
 .main-nav a:hover {
-  color: #9CCBFF;
+  color: white;
 }
 
 /* 
@@ -207,8 +269,8 @@ header {
 footer {
     background-color: #360056;
     color: white;
-    padding: 20px;
     margin-top: 50px;
+    padding: 8px;
 }
 
 .footer-container {
@@ -222,19 +284,16 @@ footer {
 .footer-links {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
 }
 
 .footer-nav li {
     display: inline-block;
-    margin: 0 10px;
 }
 
 .footer-nav a,
 .footer-links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
 }
 
 .footer-nav a:hover,
