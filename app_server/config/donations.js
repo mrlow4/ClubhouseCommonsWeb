@@ -1,4 +1,4 @@
 module.exports = {
-    currentAmount: 48000,
+    currentAmount: 2645,
     goalAmount: 50000
 };
