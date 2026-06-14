@@ -7,7 +7,7 @@ var favicon = require('serve-favicon');
 
 // routers! :)
 var indexRouter = require('./app_server/routes/index');
-var usersRouter = require('./app_server/routes/users');
+var tempRouter = require('./app_server/routes/temp');
 
 // engine to support automatic layouts
 const { engine } = require("express-handlebars");
@@ -34,7 +34,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // routes! :))
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', tempRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

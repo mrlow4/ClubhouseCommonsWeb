@@ -6,7 +6,7 @@ const index = (req, res) => {
         (donations.currentAmount / donations.goalAmount) * 100
     );
 
-    res.render("index", {
+    res.render("temp", {
         title:"Clubhouse Commons Main Page",
         currentAmount: donations.currentAmount,
         goalAmount: donations.goalAmount,
