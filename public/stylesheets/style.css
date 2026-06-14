@@ -58,8 +58,11 @@ figcaption {
     width: 100%;
     max-width: 100%;
     margin: 40px;
-    padding: 20px;
+    padding: 60px;
     justify-self: center;
+    mask: 
+      radial-gradient(165.47px at 50% 222px,#000 99%,#0000 101%) calc(50% - 148px) 0/296px 100%,
+      radial-gradient(165.47px at 50% -148px,#0000 99%,#000 101%) 50% 74px/296px 100% repeat-x;
 }
 
 .content-inner {
@@ -89,16 +92,21 @@ figcaption {
   align-items: center;
   box-sizing: border-box;
   padding: 10px;
-  border-radius: 10px;
-
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border-radius: 30px;
+  border-width: 10px;
+  border-style: solid;
+  border-color:#6d88fe;
 }
+
+
 /* main page image styling*/
 .main-img {
   width: 90%;
   height: 90%;
   object-fit: contain;
-
+  corner-shape: superellipse(0);
+  border-radius: 60px;
+  filter: drop-shadow(0 0 10px rgb(0 0 0/50));
 }
 
 /*for main page at 3 different screen sizes*/
@@ -111,21 +119,19 @@ figcaption {
   grid-auto-rows: repeat(auto-fit, 1fr);
   gap: 1em;
   grid-template-areas:
-    "header header header"
     "box1 box1 box1"
     "box1 box1 box1"
     "box2 box2 box3"
-    "box2 box2 box3";
+    "box4 box4 box3";
 }
 @media(max-width: 56em){
   .main-page {
     grid-auto-columns: repeat(auto-fit, 1fr);
     grid-auto-rows: repeat(auto-fit, 1fr);
     grid-template-areas:
-    "header"
-    "box1"
-    "box2"
-    "box3";
+    "box1 box1"
+    "box2 box3"
+    "box4 box4";
   }
   .star-off {
     display: none;
@@ -136,10 +142,10 @@ figcaption {
     grid-auto-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-areas:
-    "header"
     "box1"
     "box2"
-    "box3";
+    "box3"
+    "box4";
   }
   .star-off {
     display: none;
@@ -181,8 +187,8 @@ figcaption {
   height: 100%;
   background: linear-gradient(
     90deg,
-    black,
-    #360056
+    #360056,
+    #ae89c4
   );
   border-radius: 999px;
 
@@ -208,7 +214,8 @@ figcaption {
 */
 
 header {
-  padding: 10px 0;
+  padding-left: 10px;
+  padding-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -230,11 +237,9 @@ header {
 .star img {
   width: 75%;
   height: auto;
-  display: block;
 }
 
 .main-nav {
-  position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #a5b2fe;
@@ -243,12 +248,13 @@ header {
   padding: 0;
   margin: 5px;
   text-align: center;
+
 }
 
 .main-nav ul,
 .main-nav li {
   display: inline-block;
-  margin: 5px;
+  margin: auto;
 }
 
 .main-nav a {
@@ -267,14 +273,15 @@ header {
 */
 
 footer {
+    width:100%;
     background-color: #360056;
     color: white;
-    margin-top: 50px;
-    padding: 8px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    right: 15px;
 }
 
 .footer-container {
-    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -282,12 +289,17 @@ footer {
 /* Navigation links */
 .footer-nav ul,
 .footer-links {
+    top: 0;
+    z-index: 1000;
     list-style: none;
     padding: 0;
+    margin: 5px;
+    text-align: center;
 }
 
 .footer-nav li {
     display: inline-block;
+    margin: 5px;
 }
 
 .footer-nav a,
