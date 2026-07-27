@@ -1,6 +1,12 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0px;
+  font: 14px sans-serif;
+  margin: 0px auto 0px auto;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
 }
 
 a {
@@ -14,21 +20,6 @@ hr {
   width: 96%;               
   background-color:#b0000f;
   height: 1px;
-}
-
-ul {
-  display:block;
-  margin:0;
-  padding:0;
-}
-
-li{
-  display:block;
-  width:25%;
-  margin:0;
-  padding:0;
-  float:left;
-  list-style:none;
 }
 
 figure {
@@ -46,7 +37,7 @@ figcaption {
 /* text themes */
 .text-style-main {
     letter-spacing: 0;
-    font-family: sofia-pro, sans-serif;
+    font-family: sans-serif;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
     font-size: 1.0625rem;
@@ -57,7 +48,7 @@ figcaption {
 
 .text-style-main-headers {
     letter-spacing: 0;
-    font-family: sofia-pro, sans-serif;
+    font-family: sans-serif;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
     font-size: 1.0625rem;
@@ -69,22 +60,30 @@ figcaption {
 
 /*content background*/
 .page-content {
-    background-color: #790a13;
+    background-color: #8E0D28;
     width: 100%;
     max-width: 100%;
-    margin: 40px;
-    /*padding: 60px;*/
+    margin: 10px 0px 20px 0px;
     justify-self: center;
+    display: inline-block;
+    vertical-align: middle;
     mask: 
-      radial-gradient(165.47px at 50% 222px,#000 99%,#0000 101%) calc(50% - 148px) 0/296px 100%,
-      radial-gradient(165.47px at 50% -148px,#0000 99%,#000 101%) 50% 74px/296px 100% repeat-x;
+      /*radial-gradient(165.47px at 50% 222px,#000 99%,#0000 101%) calc(50% - 148px) 0/296px 100%,
+      radial-gradient(165.47px at 50% -148px,#0000 99%,#000 101%) 50% 74px/296px 100% repeat-x;*/
+      /*radial-gradient(180px at 50% 200px,#000 99%,#0000 101%) calc(50% - 100px) 0/200px 100%,
+      radial-gradient(180px at 50% -100px,#0000 99%,#000 101%) 50% 50px/200px 100% repeat-x;*/
+      /*radial-gradient(89.44px at 50% 120px,#000 99%,#0000 101%) calc(50% - 80px) 0/160px 100%,
+      radial-gradient(89.44px at 50% -80px,#0000 99%,#000 101%) 50% 40px/160px 100% repeat-x;*/
+      radial-gradient(44.72px at 50% 60px,#000 99%,#0000 101%) calc(50% - 40px) 0/80px 100%,
+      radial-gradient(44.72px at 50% -40px,#0000 99%,#000 101%) 50% 20px/80px 100% repeat-x;
+
 }
 
 .content-inner {
   max-width: 1100px;
   margin: 0 auto;
   justify-items: center;
-  padding: 100px;
+  padding: 50px;
 }
 
 .center-image {
@@ -229,25 +228,28 @@ figcaption {
 */
 
 header {
-  /*padding-left: 10px;*/
+  padding-left: 10px;
   padding-top: 10px;
   margin-bottom: 20px;
+  background-image: url("../images/randomStars.png");
+  background-size: 100% 100%;
 }
 
 .header-art ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 50px;
   list-style: none;
-  padding-top: 10px;
-  padding-left: 80px;
-  padding-bottom: 0px;
+  padding: 0;
   margin: 0;
 }
 
 .logo img {
-  width: 75%;
+  width: 25%;
   height: auto;
+  display: block;
+  margin: 2rem auto;
 }
 
 .star img {
@@ -261,28 +263,69 @@ header {
   background-color: #a5b2fe;
 
   list-style: none;
-  /*padding: 0;*/
-  margin: 5px;
+  padding: 0;
+  margin: 3px;
   text-align: center;
+  align-items: center;
 
 }
 
 .main-nav ul,
 .main-nav li {
   display: inline-block;
-  margin: auto;
+  align-items: center;
+  margin: 1rem auto;
 }
 
 .main-nav a {
   color: #360056;
   text-decoration: none;
+  font-weight: bold;
   margin: 5px;
   font-size: large;
+  background-color: #ae89c4;
+  padding: 10px;
+  border-radius: 25px;
+  float: left;
 }
 
-.main-nav a:hover {
+.main-nav a:hover, .dropdown:hover, .dropbtn {
   color: white;
 }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropbtn{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #6d88fe;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropopt {
+  display:none;
+  position: absolute;
+  min-width: 160px;
+  background-color: #9CCBFF;
+  border-radius: 25px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropopt a:hover {
+  background-color: #360056;
+}
+
+.dropdown:hover .dropopt {
+  display:flex;
+  flex-direction: column;
+}
+
 
 /* 
   ----- Footer -----
@@ -290,10 +333,13 @@ header {
 
 footer {
     width:100%;
-    background-color: #360056;
+    background-color: #6900a7;
     color: white;
-    margin-bottom: 20px;
-    /*padding: 10px 0;*/
+    padding: 10px 0;
+    right: 15px;
+    border-top: #000;
+    border-style: solid none;
+    border-width: 5px;
 }
 
 .footer-container {
@@ -307,7 +353,7 @@ footer {
     top: 0;
     z-index: 1000;
     list-style: none;
-    padding: 10px;
+    padding: 0;
     margin: 5px;
     text-align: center;
 }
