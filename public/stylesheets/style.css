@@ -139,8 +139,7 @@ figcaption {
   grid-template-areas:
     "box1 box1 box1"
     "box1 box1 box1"
-    "box2 box2 box3"
-    "box4 box4 box3";
+    "box2 box3 box4";
 }
 @media(max-width: 56em){
   .main-page {
