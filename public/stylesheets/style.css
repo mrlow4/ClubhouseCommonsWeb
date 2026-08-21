@@ -393,6 +393,39 @@ header {
 }
 
 /* 
+  ----- Admin -----
+*/
+
+.admin-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.admin-header {
+    margin-bottom: 2rem;
+}
+
+.admin-section {
+    background-color: #9CCBFF;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.admin-section h2 {
+    margin-top: 0;
+}
+
+.admin-section button,
+.admin-header button {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 
   ----- Footer -----
 */
 

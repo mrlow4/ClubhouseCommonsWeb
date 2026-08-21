@@ -1,9 +1,11 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
+const session = require('express-session');
 
 // routers! :)
 var indexRouter = require('./app_server/routes/index');
@@ -15,6 +17,7 @@ var cafeRouter = require('./app_server/routes/cafe');
 var eventsRouter = require('./app_server/routes/events');
 var fundsRouter = require('./app_server/routes/funds');
 var loginRouter = require('./app_server/routes/login');
+var adminRouter = require('./app_server/routes/admin');
 var workshopsRouter = require('./app_server/routes/workshops');
 
 // engine to support automatic layouts
@@ -40,6 +43,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico'))); 
 
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 // routes! :))
 app.use('/', indexRouter);
 app.use('/', tempRouter);
@@ -50,6 +61,7 @@ app.use('/cafe', cafeRouter);
 app.use('/events', eventsRouter);
 app.use('/funds', fundsRouter);
 app.use('/login', loginRouter);
+app.use('/admin', adminRouter);
 app.use('/workshops', workshopsRouter);
 
 // catch 404 and forward to error handler
