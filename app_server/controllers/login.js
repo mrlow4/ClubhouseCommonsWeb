@@ -1,11 +1,5 @@
 const bcrypt = require('bcryptjs');
 
-exports.getLogin = function(req, res) {
-    res.render('login', {
-        title: 'Admin Login'
-    });
-};
-
 exports.login = function(req, res) {
     const username = req.body.username;
     const password = req.body.password;
@@ -18,20 +12,30 @@ exports.login = function(req, res) {
         process.env.ADMIN_PASSWORD_HASH
     );
 
-    if (correctUsername && correctPassword) {
-        req.session.isAdmin = true;
-
-        return res.redirect('/admin');
+    if (!correctUsername || !correctPassword) {
+        return res.status(401).json({
+            success: false,
+            message: 'Incorrect username or password.'
+        });
     }
 
-    res.render('login', {
-        title: 'Admin Login',
-        error: 'Incorrect username or password.'
+    req.session.isAdmin = true;
+
+    res.json({
+        success: true
     });
 };
 
 exports.logout = function(req, res) {
-    req.session.destroy(function() {
-        res.redirect('/login');
+    req.session.destroy(function(err) {
+        if (err) {
+            return res.status(500).json({
+                success: false
+            });
+        }
+
+        res.json({
+            success: true
+        });
     });
 };
