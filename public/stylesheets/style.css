@@ -329,9 +329,11 @@ header {
   display:flex;
   flex-direction: column;
 }
+
 /*
   ----- Login Stuff ----- 
 */
+
 .login-page {
     min-height: 70vh;
     display: flex;
