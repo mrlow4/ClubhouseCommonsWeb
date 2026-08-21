@@ -58,7 +58,7 @@ app.use('/artists', artistsRouter);
 app.use('/cafe', cafeRouter);
 app.use('/events', eventsRouter);
 app.use('/funds', fundsRouter);
-app.use('/login', loginRouter);
+app.use('/api/login', loginRouter);
 app.use('/admin', adminRouter);
 app.use('/workshops', workshopsRouter);
 
@@ -69,6 +69,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  console.error(err);
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
