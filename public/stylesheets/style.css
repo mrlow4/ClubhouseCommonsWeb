@@ -329,9 +329,11 @@ header {
   display:flex;
   flex-direction: column;
 }
+
 /*
-Login Stuff
+  ----- Login Stuff ----- 
 */
+
 .login-page {
     min-height: 70vh;
     display: flex;
@@ -344,9 +346,9 @@ Login Stuff
     width: 100%;
     max-width: 400px;
     padding: 2rem;
-    border: 1px solid #ddd;
+    border: 1px solid #82b2e9;
     border-radius: 12px;
-    background-color: white;
+    background-color: #9CCBFF;
 }
 
 .login-card h1 {
@@ -371,7 +373,7 @@ Login Stuff
 
 .form-group input {
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    border: 1px solid #82b2e9;
     border-radius: 6px;
     font-size: 1rem;
 }
