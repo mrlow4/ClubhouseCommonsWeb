@@ -1,3 +1,8 @@
-router.get('/bus', function(req, res) {
-    res.render('bus');
-});
+const express = require('express');
+const router = express.Router();
+
+const controller = require('../controllers/bus');
+
+router.get('/', controller.getBus);
+
+module.exports = router;

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const controller = require('../controllers/funds');
+const controller = require('../controllers/admin');
 
-router.get('/', controller.getFunds);
+router.get('/', controller.getAdmin);
 
 module.exports = router;

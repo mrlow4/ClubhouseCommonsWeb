@@ -1,3 +1,8 @@
-router.get('/workshops', function(req, res) {
-    res.render('workshops');
-});
+const express = require('express');
+const router = express.Router();
+
+const controller = require('../controllers/workshops');
+
+router.get('/', controller.getWorkshops);
+
+module.exports = router;
