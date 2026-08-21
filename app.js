@@ -8,6 +8,14 @@ var favicon = require('serve-favicon');
 // routers! :)
 var indexRouter = require('./app_server/routes/index');
 var tempRouter = require('./app_server/routes/temp');
+var aboutRouter = require('./app_server/routes/about');
+var artistsRouter = require('./app_server/routes/artists');
+var busRouter = require('./app_server/routes/bus');
+var cafeRouter = require('./app_server/routes/cafe');
+var eventsRouter = require('./app_server/routes/events');
+var fundsRouter = require('./app_server/routes/funds');
+var loginRouter = require('./app_server/routes/login');
+var workshopsRouter = require('./app_server/routes/workshops');
 
 // engine to support automatic layouts
 const { engine } = require("express-handlebars");
@@ -35,6 +43,14 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // routes! :))
 app.use('/', indexRouter);
 app.use('/', tempRouter);
+app.use('/about', aboutRouter);
+app.use('/artists', artistsRouter);
+app.use('/bus', busRouter);
+app.use('/cafe', cafeRouter);
+app.use('/events', eventsRouter);
+app.use('/funds', fundsRouter);
+app.use('/login', loginRouter);
+app.use('/workshops', workshopsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
