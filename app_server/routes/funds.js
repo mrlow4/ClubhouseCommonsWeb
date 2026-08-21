@@ -1,3 +1,8 @@
-router.get('/fundraising', function(req, res) {
-    res.render('fundraising');
-});
+const express = require('express');
+const router = express.Router();
+
+const controller = require('../controllers/funds');
+
+router.get('/', controller.getFunds);
+
+module.exports = router;
