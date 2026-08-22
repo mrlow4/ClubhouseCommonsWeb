@@ -1,3 +1,4 @@
+/* general html style settings */
 body {
   font: 14px sans-serif;
   margin: 0px auto 0px auto;
@@ -22,15 +23,19 @@ hr {
   height: 1px;
 }
 
+/* section wrapper to display content side by side ?? 
+doesn't really do anything right now*/
 section {
   display: inline-block;
 }
 
+/* display image as figure */
 figure {
   display: inline-block;
   position: relative;
 }
 
+/* oh no i cannot remember what this does */
 figcaption {
   position: sticky;
   bottom: 4px;
@@ -82,14 +87,14 @@ figcaption {
       radial-gradient(44.72px at 50% -40px,#0000 99%,#000 101%) 50% 20px/80px 100% repeat-x;
 
 }
-
+ /* padding for content inside main page content*/
 .content-inner {
   max-width: 1100px;
   margin: 0 auto;
   justify-items: center;
   padding: 50px;
 }
-
+ /* centers image in div */
 .center-image {
   display: block;
   margin: 2rem auto;
@@ -272,6 +277,7 @@ header {
   text-align: center;
   align-items: center;
 
+  max-width: 100%;
 }
 
 .main-nav ul,
@@ -279,7 +285,9 @@ header {
   display: inline-block;
   align-items: center;
   margin: 1rem auto;
+  max-width: 100%;
 }
+
 
 .main-nav a {
   color: #360056;
