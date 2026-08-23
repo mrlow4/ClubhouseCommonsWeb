@@ -59,7 +59,7 @@ app.use('/cafe', cafeRouter);
 app.use('/events', eventsRouter);
 app.use('/funds', fundsRouter);
 app.use('/api/login', loginRouter);
-app.use('/admin', adminRouter);
+app.use('/api/admin', adminRouter);
 app.use('/workshops', workshopsRouter);
 
 // catch 404 and forward to error handler
