@@ -1,6 +1,11 @@
 body {
-  font: 14px sans-serif;
-  margin: 0px auto 0px auto;
+    font: 14px sans-serif;
+    margin: 0;
+
+    background-color: #a5b2fe;
+    background-image: url("../images/randomStars.png");
+    background-repeat: repeat;
+    background-size: 1000px auto;
 }
 
 h1 {
@@ -64,7 +69,11 @@ figcaption {
 
 /*content background*/
 .page-content {
-    background-color: #8E0D28;
+    background: linear-gradient(
+    180deg,
+    #9e1a40,
+    #5f0f1a
+    );
     width: 100%;
     max-width: 100%;
     margin: 10px 0px 20px 0px;
@@ -232,11 +241,7 @@ figcaption {
 */
 
 header {
-  padding-left: 10px;
-  padding-top: 10px;
-  margin-bottom: 20px;
-  background-image: url("../images/randomStars.png");
-  background-size: 100% 100%;
+    margin-bottom: 20px;
 }
 
 .header-art ul {
@@ -262,16 +267,14 @@ header {
 }
 
 .main-nav {
-  top: 0;
-  z-index: 1000;
-  background-color: #a5b2fe;
-
-  list-style: none;
-  padding: 0;
-  margin: 3px;
-  text-align: center;
-  align-items: center;
-
+    top: 0;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 3px;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
 }
 
 .main-nav ul,
@@ -295,6 +298,34 @@ header {
 
 .main-nav a:hover, .dropdown:hover, .dropbtn {
   color: white;
+}
+
+/* less contrast between stars and logo */
+.logo {
+    position: relative;
+    z-index: 1;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 260px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(165, 178, 254, 1) 35%,
+        rgba(165, 178, 254, 0.85) 55%,
+        rgba(165, 178, 254, 0) 75%
+    );
+
+    z-index: -1;
+    pointer-events: none;
 }
 
 .dropdown {
@@ -336,7 +367,11 @@ header {
 
 footer {
     width:100%;
-    background-color: #6900a7;
+    background: linear-gradient(
+      180deg,
+      #6900a7,
+      #41007e
+    );
     color: white;
     padding: 10px 0;
     right: 15px;
