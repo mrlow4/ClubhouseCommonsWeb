@@ -1,6 +1,6 @@
+// Checks if user is authenticated as the admin
 exports.getAdmin = function(req, res) {
-    res.render('admin', {
-        title: 'Admin Page',
-        layout: 'admin'
+    res.json({
+        authenticated: true
     });
 };

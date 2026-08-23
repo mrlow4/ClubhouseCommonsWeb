@@ -48,8 +48,6 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 // routes! :))
 app.use('/', indexRouter);
 app.use('/', tempRouter);
@@ -58,9 +56,11 @@ app.use('/artists', artistsRouter);
 app.use('/cafe', cafeRouter);
 app.use('/events', eventsRouter);
 app.use('/funds', fundsRouter);
+app.use('/workshops', workshopsRouter);
+
+// Backend enpoints used by Angular
 app.use('/api/login', loginRouter);
 app.use('/api/admin', adminRouter);
-app.use('/workshops', workshopsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,5 +3,7 @@ exports.requireAdmin = function(req, res, next) {
         return next();
     }
 
-    res.redirect('/login');
+    res.status(401).json({
+        authenticated: false
+    });
 };
